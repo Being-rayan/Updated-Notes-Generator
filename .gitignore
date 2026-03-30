@@ -5,3 +5,6 @@ backend/data/profiles/*.json
 !backend/data/profiles/.gitkeep
 backend/data/style_samples/*.pdf
 !backend/data/style_samples/.gitkeep
+node_modules/
+note-formatter-ai/node_modules/
+.env
