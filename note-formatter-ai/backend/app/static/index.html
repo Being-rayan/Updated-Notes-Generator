@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note Formatter AI</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="panel">
+        <h1>Note Formatter</h1>
+        <p class="muted">
+          Upload your existing styled PDFs once to build the profile, then upload
+          a raw PDF or screenshot image and generate an A4 two-column version automatically.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>Formatting Profile</h2>
+        <form id="profile-form">
+          <label class="field">
+            <span>Style sample PDFs</span>
+            <input type="file" name="samplePdfs" accept=".pdf" multiple />
+          </label>
+          <button type="submit">Rebuild profile</button>
+        </form>
+        <pre id="profile-output" class="output"></pre>
+      </section>
+
+      <section class="panel">
+        <h2>Generate Formatted Notes</h2>
+        <form id="format-form">
+          <label class="field">
+            <span>Raw notes PDF or screenshot</span>
+            <input
+              type="file"
+              name="notesPdf"
+              accept=".pdf,image/png,image/jpeg"
+              required
+            />
+          </label>
+
+          <label class="field">
+            <span>Optional extra style PDFs</span>
+            <input type="file" name="samplePdfs" accept=".pdf" multiple />
+          </label>
+
+          <label class="field">
+            <span>Gemini API key (optional)</span>
+            <input type="password" name="geminiApiKey" placeholder="AIza..." />
+          </label>
+          <p class="muted">
+            Add a Gemini key if your notes include screenshots or scanned text. The
+            formatter will OCR readable text and equations from images and keep diagrams
+            as images when needed.
+          </p>
+
+          <label class="field">
+            <span>Extra instructions (optional)</span>
+            <textarea
+              name="customInstructions"
+              rows="4"
+              placeholder="Example: keep definitions as bullets, keep important terms bold."
+            ></textarea>
+          </label>
+
+          <button type="submit">Format PDF</button>
+        </form>
+        <pre id="format-output" class="output"></pre>
+        <div id="format-result" class="result-card" hidden>
+          <p id="format-result-text" class="result-text"></p>
+          <a
+            id="download-link"
+            class="download-button"
+            href="#"
+            download
+          >
+            Download formatted PDF
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

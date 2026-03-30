@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background: #f3efe8;
+  color: #1f1a17;
+}
+
+.shell {
+  width: min(860px, calc(100% - 32px));
+  margin: 24px auto 48px;
+  display: grid;
+  gap: 16px;
+}
+
+.panel {
+  background: #fffdf8;
+  border: 1px solid #cbbfae;
+  padding: 18px;
+}
+
+h1,
+h2 {
+  margin: 0 0 8px;
+}
+
+.muted {
+  margin: 0;
+  color: #5e554e;
+  line-height: 1.4;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #bfae96;
+  background: #ffffff;
+}
+
+button {
+  padding: 10px 14px;
+  border: 1px solid #4c4138;
+  background: #4c4138;
+  color: #fffdf8;
+  cursor: pointer;
+}
+
+.download-button {
+  display: inline-block;
+  padding: 10px 14px;
+  border: 1px solid #1f4a37;
+  background: #1f4a37;
+  color: #fffdf8;
+  text-decoration: none;
+}
+
+.output {
+  min-height: 60px;
+  white-space: pre-wrap;
+  background: #f7f2ea;
+  border: 1px solid #d5c7b5;
+  padding: 12px;
+  margin: 12px 0 0;
+}
+
+.result-card {
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid #c7d8ca;
+  background: #eef6f0;
+}
+
+.result-text {
+  margin: 0 0 10px;
+  line-height: 1.4;
+}
